@@ -1,11 +1,8 @@
-const net = require('net');
-const { NtripDecoder } = require('../index');
+import net from "net";
+import {NtripDecoder} from "../index";
 
 const decoder = new NtripDecoder();
 
-decoder.on('data', (data) => {
-  console.log('decoded', data);
-});
 decoder.on('error', (err) => {
   console.log('deoced error', err);
 });
@@ -14,15 +11,15 @@ decoder.on('close', () => {
 });
 
 const client = net.createConnection({
-  host: 'rtk2go.com',
+  host: 'caster.centipede.fr',
   port: 2101
 });
 
 client.on('connect', () => {
-  const mountpoint = 'MOTBY';
+  const mountpoint = 'TEST';
   const userAgent = 'NTRIP ntrip-decoder-test/1.0.0';
-  const username = 'test';
-  const password = '';
+  const username = 'centipede';
+  const password = 'centipede';
   const authorization = Buffer.from(username + ':' + password, 'utf8').toString(
     'base64'
   );
@@ -31,8 +28,10 @@ client.on('connect', () => {
 });
 
 client.on('data', (data) => {
+  console.log(data.toString())
   decoder.decode(data);
 });
+
 
 client.on('error', (err) => {
   console.log('socket error', err);
