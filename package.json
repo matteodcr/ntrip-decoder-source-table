@@ -1,19 +1,16 @@
 {
-	"name": "ntrip-decoder",
+	"name": "ntrip-decoder-source-table",
 	"version": "1.0.2",
-	"description": "The decoder for ntripcaster, not for rtcm data.",
+	"description": "This project is a fork of https://github.com/dxhbiz/ntrip-client.\nI added a sourcetable decoder to eventually list all the mountpoints.",
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/dxhbiz/ntrip-decoder.git"
+		"url": "git+https://github.com/matteodcr/ntrip-decoder-source-table.git"
 	},
-	"author": "dxhbiz@gmail.com",
+	"author": "mattdecorsaire@gmail.com",
 	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/dxhbiz/ntrip-decoder/issues"
-	},
-	"homepage": "https://github.com/dxhbiz/ntrip-decoder#readme"
+	"homepage": "https://github.com/matteodcr/ntrip-decoder-source-table.git"
 }
